@@ -14,3 +14,4 @@ data/
 *.ipynb_checkpoints
 coverage/
 htmlcov/
+artifacts/attribution.joblib
