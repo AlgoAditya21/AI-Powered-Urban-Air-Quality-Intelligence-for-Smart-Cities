@@ -1,0 +1,34 @@
+{
+  "1": {
+    "horizon_h": 1,
+    "baseline_rmse": 60.0930932940295,
+    "baseline_mae": 48.60275855581578,
+    "model_rmse": 38.783724135401144,
+    "model_mae": 31.119069225412897,
+    "rmse_improvement_pct": 35.46059620256814
+  },
+  "24": {
+    "horizon_h": 24,
+    "baseline_rmse": 57.65900213215275,
+    "baseline_mae": 46.77199394936039,
+    "model_rmse": 41.49952535851765,
+    "model_mae": 33.677117569188326,
+    "rmse_improvement_pct": 28.025939013994815
+  },
+  "48": {
+    "horizon_h": 48,
+    "baseline_rmse": 56.02239286410292,
+    "baseline_mae": 45.20372949139892,
+    "model_rmse": 41.23840064710994,
+    "model_mae": 33.371062410138734,
+    "rmse_improvement_pct": 26.389433691016105
+  },
+  "72": {
+    "horizon_h": 72,
+    "baseline_rmse": 55.15447345210436,
+    "baseline_mae": 44.48597365967785,
+    "model_rmse": 41.953619176134076,
+    "model_mae": 33.73665255505311,
+    "rmse_improvement_pct": 23.93433107005144
+  }
+}

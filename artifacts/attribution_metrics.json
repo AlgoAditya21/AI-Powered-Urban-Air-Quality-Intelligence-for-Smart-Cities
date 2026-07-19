@@ -1,0 +1,12 @@
+{
+  "per_source_mae": {
+    "traffic": 0.1051886089989901,
+    "industry": 0.14321674315984473,
+    "construction": 0.06985944387903781,
+    "biomass_burning": 0.1989036127888478,
+    "dust": 0.04641646676126661
+  },
+  "macro_mae": 0.11271697511759741,
+  "dominant_source_accuracy": 0.3701218571648928,
+  "top2_source_accuracy": 0.6761530155792072
+}
