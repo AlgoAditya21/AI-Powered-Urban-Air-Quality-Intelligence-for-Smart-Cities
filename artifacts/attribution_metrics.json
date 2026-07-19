@@ -1,12 +1,3 @@
-{
-  "per_source_mae": {
-    "traffic": 0.1051886089989901,
-    "industry": 0.14321674315984473,
-    "construction": 0.06985944387903781,
-    "biomass_burning": 0.1989036127888478,
-    "dust": 0.04641646676126661
-  },
-  "macro_mae": 0.11271697511759741,
-  "dominant_source_accuracy": 0.3701218571648928,
-  "top2_source_accuracy": 0.6761530155792072
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b694d563611e432390183de5ed5da33b43c3b149ecbdc8d184f2134771ee4bf7
+size 349
