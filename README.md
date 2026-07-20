@@ -6,8 +6,7 @@
 
 AirIQ transitions urban air quality management from a passive, observation-only model into an active, predictive framework for public safety and administrative response. Built as a unified intelligence platform, it provides actionable insights tailored for municipal leaders, field inspectors, and community members.
 
-![AirIQ Dashboard Command Center UI](<img width="1023" height="618" alt="image" src="https://github.com/user-attachments/assets/eedfe438-bd22-46e4-bb09-2600221b15da" />
-)
+![AirIQ Dashboard Command Center UI](image.png)
 
 ---
 
@@ -15,8 +14,7 @@ AirIQ transitions urban air quality management from a passive, observation-only 
 
 The end-to-end framework bridges automated multi-stream ingestion layer pipelines with high-performance regression networks, exposing the analytical layer inside a responsive, live operations control console.
 
-![AirIQ Full Architecture Diagram](<img width="1800" height="1200" alt="image" src="https://github.com/user-attachments/assets/eb7fb614-78e6-4f0d-8b3b-3868c3263df1" />
-)
+![AirIQ Full Architecture Diagram](architecture_diagram.png)
 
 ### Core Pipeline Structure
 
