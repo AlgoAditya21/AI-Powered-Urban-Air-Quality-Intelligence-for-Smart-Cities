@@ -41,6 +41,9 @@ def _action_for(source: str) -> str:
 def _has_docs() -> bool:
     return os.path.exists("docs/ARCHITECTURE.md")
 
+def _has_attribution_model() -> bool:
+    return attribution.MODEL_PATH.exists()
+
 # --------------------------------------------------------------------------- #
 # Page config                                                                 #
 # --------------------------------------------------------------------------- #
@@ -139,7 +142,7 @@ def get_attribution_metrics() -> dict:
 
 
 @st.cache_data(show_spinner="Running source attribution for all stations...")
-def get_latest_with_attribution(df: pd.DataFrame) -> pd.DataFrame:
+def get_latest_with_attribution(df: pd.DataFrame, model_mtime: float | None) -> pd.DataFrame:
     latest = df.sort_values("timestamp").groupby("station_id", as_index=False).tail(1)
     return attribution.attribute(latest)
 
@@ -321,11 +324,17 @@ with tab_forecast:
 with tab_sources:
     st.markdown("### Module B — Which sources are polluting the air, right now?")
 
-    try:
-        attributed = get_latest_with_attribution(df)
-    except FileNotFoundError:
+    if not _has_attribution_model():
         st.warning("Attribution model not trained yet — run `python generate_and_train.py`.")
         attributed = pd.DataFrame()
+    else:
+        model_mtime = attribution.MODEL_PATH.stat().st_mtime
+        try:
+            attributed = get_latest_with_attribution(df, model_mtime)
+        except Exception as exc:
+            st.warning("Attribution model exists but inference failed. Please restart the app or retrain with `python generate_and_train.py`.")
+            st.write(f"Technical details: {exc}")
+            attributed = pd.DataFrame()
 
     if not attributed.empty:
         left, right = st.columns([2, 1])
