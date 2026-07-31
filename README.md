@@ -32,6 +32,13 @@ The end-to-end framework bridges automated multi-stream ingestion layer pipeline
 * **Feature Engineering Matrix:** Employs temporal target value offsets, spatial rolling averages, detailed atmospheric conditions (ambient temperature, wind vector components, relative humidity boundaries, boundary layer elevations), cyclical time-series variables, satellite observations, and real-time upwind thermal signatures.
 * **Core Algorithm:** Leverages `HistGradientBoostingRegressor` to ensure optimal gradient-boosted training parity with complex XGBoost ensembles, while avoiding heavy architecture dependencies to guarantee frictionless local compilation.
 * **Target Metric Focus:** Evaluated directly against basic temporal persistence variables ($y_{t+n} = y_t$). The configuration demonstrates a measurable $24\%\text{--}36\%$ optimization in Root Mean Squared Error ($RMSE$), ensuring highly dependable predictive trajectories across macro horizons.
+* **Trained Performance (Latest):**
+  | Horizon | Baseline RMSE | Model RMSE | Improvement |
+  |---------|---------------|-----------|-------------|
+  | 1h      | 60.09         | 38.78     | **35.5%**   |
+  | 24h     | 57.66         | 41.50     | **28.0%**   |
+  | 48h     | 56.02         | 41.24     | **26.4%**   |
+  | 72h     | 55.15         | 41.95     | **23.9%**   |
 
 ### 🏭 Module B — Real-Time Source Attribution Classifier
 * **Objective:** A dedicated multi-label probabilistic model determining structural source shares for any target ward or time slot across five key pillars:
@@ -39,6 +46,17 @@ The end-to-end framework bridges automated multi-stream ingestion layer pipeline
 * **Feature Input Stream:** Correlates real-world vehicular transit loads, historical factory coordinate densities, structural construction permit records, upwind thermal events, boundary layer behaviors, and real-time wind dispersal velocities.
 * **Core Algorithm:** Utilizes an optimized Random Forest architecture capable of calculating multi-output probabilities simultaneously, enabling precise tracking of mixed environmental signatures.
 * **Visualization Layer:** Feeds a dynamic city-wide spatial matrix alongside responsive pie chart indicators that instantly reveal the primary local emission driver.
+* **Trained Performance (Latest):**
+  | Metric | Score |
+  |--------|-------|
+  | Dominant-source accuracy | **37.0%** |
+  | Top-2 source accuracy    | **67.6%** |
+  | Macro MAE                | **0.113** |
+  | Per-source MAE (Traffic) | 0.105 |
+  | Per-source MAE (Industry) | 0.143 |
+  | Per-source MAE (Construction) | 0.070 |
+  | Per-source MAE (Biomass) | 0.199 |
+  | Per-source MAE (Dust)    | 0.046 |
 
 ### 💬 Module C — Multilingual Citizen Advisory Engine
 * **Objective:** Processes active geo-coordinates, pincode areas, or target municipal wards to translate broad sensor intelligence into tailored community guidance.
